@@ -18,13 +18,11 @@ class App extends Component {
       return;
     }
     const formData = new FormData(); 
-  
-    formData.append( 
-      "zip_file", 
-      this.state.selectedFile, 
-      this.state.selectedFile.name 
-    ); 
-    axios.post(process.env.REACT_APP_END_POINT +"/uploadfile", formData); 
+    formData.set('name', this.state.selectedFile.name);
+    formData.set('zip_file', this.state.selectedFile);
+    axios.post(process.env.REACT_APP_END_POINT +"/api/uploadfile", formData, {}).then(function(response){
+      window.alert("success");
+    })
 	}; 
 	
 	// File content to be displayed after 
