@@ -24,7 +24,7 @@ class App extends Component {
       this.state.selectedFile, 
       this.state.selectedFile.name 
     ); 
-    axios.post(process.env.REACT_APP_END_POINT +"/api/uploadfile", formData); 
+    axios.post(process.env.REACT_APP_END_POINT +"/uploadfile", formData); 
 	}; 
 	
 	// File content to be displayed after 
